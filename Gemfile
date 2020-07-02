@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'aasm', '~> 5.0', '>= 5.0.8'
 gem 'oauth2', '~> 1.4', '>= 1.4.4'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 
