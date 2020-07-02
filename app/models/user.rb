@@ -8,4 +8,17 @@ class User < ApplicationRecord
   # :: Validations
   validates :name, :email, presence: true
   validates :email, :google_uid, uniqueness: true
+
+  # :: Methods
+  def self.find_or_create_with_omniauth(auth)
+    user = find_or_create_by(email: auth.info.email, google_uid: auth.uid.to_s)
+    user.assign_attributes(
+      name: auth.info.name,
+      email: auth.info.email,
+      google_uid: auth.uid,
+      google_token: auth.credentials.token
+    )
+    user.save
+    user
+  end
 end
