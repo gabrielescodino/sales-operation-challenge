@@ -1,46 +1,34 @@
-.panel.panel-info
-  .panel-heading
-    p.lead
-      b IMPORT SALES REPORT
-  .panel-body
-    .form-group
+.card
+  .card-header SALES REPORTS
+  .card-body
+    .table-responsive
+      table.table.table-hover.table-striped
+        thead
+          tr
+            th Imported at
+            th Status
+            th Income
+            th File
+            th
+        tbody
+          - @sales_reports.each do |sales_report|
+            tr
+              td = sales_report.created_at.strftime("%Y-%m-%d %H:%M:%S")
+              td = sales_report.status.capitalize
+              td = number_to_currency(sales_report.income / 100.0)
+              td = link_to sales_report.input_file.filename, rails_blob_path(sales_report.input_file, disposition: 'attachment')
+              td
+                = link_to sales_report_path(sales_report), class: 'btn btn-default' do
+                  i.fa.fa-eye
+                | &nbsp;&nbsp;
 
-.row.top-summary
-  .col-lg-12
-    .panel.panel-info
-      .panel-heading
-        p.lead
-          b SALES REPORTS
+                = link_to sales_report_path(sales_report), method: :DELETE, data: { confirm: 'Are you sure you want to delete file?' }, class: 'btn btn-default' do
+                  i.fa.fa-times-circle
+                | &nbsp;&nbsp;
 
-      .panel-body
-        .table-responsive
-          table.table.table-hover.table-striped
-            thead
-              tr
-                th Imported at
-                th Status
-                th Income
-                th File
-                th
-            tbody
-              - @sales_reports.each do |sales_report|
-                tr
-                  td = sales_report.created_at.strftime("%Y-%m-%d %H:%M:%S")
-                  td = sales_report.status.capitalize
-                  td = number_to_currency(sales_report.income / 100.0)
-                  td = link_to sales_report.input_file.filename, rails_blob_path(sales_report.input_file, disposition: 'attachment')
-                  td
-                    = link_to sales_report_path(sales_report), class: 'btn btn-default' do
-                      i.fa.fa-eye
-                    | &nbsp;&nbsp;
+      .text-center
 
-                    = link_to sales_report_path(sales_report), method: :DELETE, data: { confirm: 'Are you sure you want to delete file?' }, class: 'btn btn-default' do
-                      i.fa.fa-times-circle
-                    | &nbsp;&nbsp;
-
-          .text-center
-
-      .panel-footer
-        .row
-          .col-sm-12
-            b = "#{@sales_reports_count} sales reports imported by #{@current_user.name}"
+    .card-footer
+      .row
+        .col-sm-12
+          b = "#{@sales_reports_count} sales reports imported by #{@current_user.name}"
