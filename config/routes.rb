@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     root to: 'sessions#new'
 
+    resources :sales_reports, only: %i[create index]
+
     match '/auth/:provider/callback' => 'sessions#create',  as: :auth_callback, via: :get
     match '/auth/failure'            => 'sessions#failure', as: :auth_failure, via: :get
     match '/logout'                  => 'sessions#destroy', as: :logout, via: :get

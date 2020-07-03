@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class SessionsController < ApplicationController
   def new
     redirect_to after_login_path if user_signed_in?
@@ -27,6 +28,6 @@ class SessionsController < ApplicationController
   private
 
   def after_login_path
-    home_path
+    sales_reports_path
   end
 end
