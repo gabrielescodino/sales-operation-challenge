@@ -28,8 +28,10 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'aasm', '~> 5.0', '>= 5.0.8'
 gem 'oauth2', '~> 1.4', '>= 1.4.4'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
 gem 'slim-rails', '~> 3.2'
 
@@ -59,6 +61,7 @@ group :test do
   gem 'webdrivers'
   gem 'factory_bot_rails', '~> 6.0'
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'shoulda-matchers', '~> 4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
