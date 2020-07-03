@@ -1,6 +1,11 @@
 .card
   .card-header SALES REPORTS
   .card-body
+    = simple_form_for(SalesReport.new) do |f|
+      = f.input :input_file, as: :file, label: false, class: 'form-control-file js-input-file'
+
+      = f.submit 'import', disabled: true, class: 'btn btn-primary js-file-import-button'
+
     .table-responsive
       table.table.table-hover.table-striped
         thead
