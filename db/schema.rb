@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_041031) do
+ActiveRecord::Schema.define(version: 2020_07_03_015043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "price"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "merchants", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "merchant_id"
+    t.bigint "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "purchase_count"
+    t.integer "item_price"
+    t.index ["customer_id"], name: "index_sales_on_customer_id"
+    t.index ["item_id"], name: "index_sales_on_item_id"
+    t.index ["merchant_id"], name: "index_sales_on_merchant_id"
+  end
 
   create_table "sales_reports", force: :cascade do |t|
     t.bigint "user_id"
@@ -33,5 +66,8 @@ ActiveRecord::Schema.define(version: 2020_07_02_041031) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "sales", "customers"
+  add_foreign_key "sales", "items"
+  add_foreign_key "sales", "merchants"
   add_foreign_key "sales_reports", "users"
 end

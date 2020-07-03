@@ -20,4 +20,3 @@ module SalesOperationChallenge
     end
   end
 end
-
