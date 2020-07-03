@@ -1,10 +1,11 @@
 .card
   .card-header SALES REPORTS
   .card-body
-    = simple_form_for(SalesReport.new) do |f|
-      = f.input :input_file, as: :file, label: false, class: 'form-control-file js-input-file'
+    .form
+      = simple_form_for(SalesReport.new) do |f|
+        = f.input :input_file, as: :file, label: false, class: 'form-control-file js-input-file'
 
-      = f.submit 'import', disabled: true, class: 'btn btn-primary js-file-import-button'
+        = f.submit 'import'
 
     .table-responsive
       table.table.table-hover.table-striped
@@ -22,14 +23,6 @@
               td = sales_report.status.capitalize
               td = number_to_currency(sales_report.income / 100.0)
               td = link_to sales_report.input_file.filename, rails_blob_path(sales_report.input_file, disposition: 'attachment')
-              td
-                = link_to sales_report_path(sales_report), class: 'btn btn-default' do
-                  i.fa.fa-eye
-                | &nbsp;&nbsp;
-
-                = link_to sales_report_path(sales_report), method: :DELETE, data: { confirm: 'Are you sure you want to delete file?' }, class: 'btn btn-default' do
-                  i.fa.fa-times-circle
-                | &nbsp;&nbsp;
 
       .text-center
 

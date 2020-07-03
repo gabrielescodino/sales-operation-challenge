@@ -13,4 +13,8 @@ class SalesReport < ApplicationRecord
   validates :income, :status, presence: true
 
   # :: Methods
+  def enqueue_process!
+    change_to_pending!
+    SalesImporterJob.perform_later(id)
+  end
 end

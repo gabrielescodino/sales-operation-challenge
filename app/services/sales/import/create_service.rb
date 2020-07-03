@@ -7,7 +7,7 @@ module Sales
         @sales_report = SalesReport.find(sales_report)
       end
 
-      def execute
+      def execute!
         ActiveRecord::Base.transaction do
           lines = @sales_report.input_file.download.split("\n")
 
