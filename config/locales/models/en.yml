@@ -1,0 +1,7 @@
+en:
+ models:
+  sales_report:
+    income: Income
+    status: Status
+    created_at: Imported at
+    input_file: File

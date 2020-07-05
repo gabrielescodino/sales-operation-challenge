@@ -29,11 +29,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'aasm', '~> 5.0', '>= 5.0.8'
+gem 'draper', '~> 4.0', '>= 4.0.1'
 gem 'oauth2', '~> 1.4', '>= 1.4.4'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'sidekiq', '~> 6.1'
-
 gem 'slim-rails', '~> 3.2'
 
 group :development, :test do

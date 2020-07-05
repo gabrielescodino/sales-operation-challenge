@@ -11,7 +11,7 @@ class SalesReportsController < ApplicationController
 
   def index
     @sales_reports = current_user.sales_reports.order(created_at: 'desc')
-    @sales_reports_count = current_user.sales_reports.count
+    @sales_reports_count = @sales_reports.count
   end
 
   private
