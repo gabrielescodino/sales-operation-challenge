@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'sales_report index', type: :request do
+RSpec.describe 'sales_report create', type: :request do
   include ActiveJob::TestHelper
 
   let(:user) { create(:user) }
