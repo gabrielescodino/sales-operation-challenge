@@ -35,9 +35,12 @@ module Sales
 
       def import_sale!(row)
         customer       = Customer.find_or_create_by!(name: row['purchaser name'])
-        item           = Item.find_or_create_by!(description: row['item description'])
         item_price     = handle_item_price(row['item price'])
         purchase_count = row['purchase count'].to_i
+
+        item = Item.find_or_create_by!(description: row['item description']) do |item|
+          item.price = item_price
+        end
 
         merchant = Merchant.find_or_create_by!(name: row['merchant name']) do |merchant|
           merchant.address = row['merchant address']

@@ -14,8 +14,17 @@ RSpec.describe Sales::Import::CreateService, type: :model do
         fixture_file_upload(Rails.root.join('spec/fixtures/files/sales_report_sample.tab'), 'image/txt')
       end
 
-      it 'import file from sales report and create sales' do
-        expect { subject }.to change { Sale.count }.by(4)
+      it 'import file from sales report and correctly create sales with its associations' do
+        expect { subject }.to change { user.sales.count }.by(4)
+
+        expect(Customer.pluck(:name)).to eq(['João Silva', 'Amy Pond', 'Marty McFly', 'Snake Plissken'])
+        expect(Item.pluck(:description, :price)).to eq([['R$10 off R$20 of food', 1000],
+                                                        ['R$30 of awesome for R$10', 1000],
+                                                        ['R$20 Sneakers for R$5', 500]])
+
+        expect(Merchant.pluck(:name, :address)).to eq([["Bob's Pizza", '987 Fake St'],
+                                                       ["Tom's Awesome Shop", '456 Unreal Rd'],
+                                                       ['Sneaker Store Emporium', '123 Fake St']])
       end
 
       it 'updates sales report income' do
@@ -39,7 +48,7 @@ RSpec.describe Sales::Import::CreateService, type: :model do
       it 'does not create any sales' do
         subject
 
-        expect { subject }.not_to change { Sale.count }
+        expect { subject }.not_to change{ user.sales.count }
       end
 
       it 'does not updates sales report income' do
