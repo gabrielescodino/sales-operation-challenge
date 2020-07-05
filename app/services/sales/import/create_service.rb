@@ -43,12 +43,8 @@ module Sales
           merchant.address = row['merchant address']
         end
 
-        Sale.create!(customer_id: customer.id,
-                     item_id: item.id,
-                     item_price: item_price,
-                     purchase_count: purchase_count,
-                     merchant_id: merchant.id,
-                     sales_report_id: @sales_report.id)
+        Sale.create!(customer_id: customer.id, item_id: item.id, item_price: item_price,
+                     purchase_count: purchase_count, merchant_id: merchant.id, sales_report_id: @sales_report.id)
       end
     end
   end
