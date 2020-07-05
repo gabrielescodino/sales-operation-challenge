@@ -1,0 +1,5 @@
+en:
+ controllers:
+  sales_reports:
+    create:
+      redirect_message: 'Sales are being imported right now.'

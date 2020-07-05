@@ -10,7 +10,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       ul.navbar-nav.ml-auto
         li.nav-item
           a.nav-link href="#"
-            = "Logged as #{@current_user.name}"
+            = "Logged as #{current_user.name}"
         li.nav-item
           a
             = link_to 'Logout', logout_path, class: 'nav-item nav-link'

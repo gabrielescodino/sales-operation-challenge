@@ -17,6 +17,8 @@ module SalesOperationChallenge
     # the framework and any gems in your application.
     config.active_job.queue_adapter = :sidekiq
 
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
     config.generators do |g|
       g.test_framework :rspec
     end
