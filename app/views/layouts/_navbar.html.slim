@@ -1,10 +1,16 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand href="#"  Navbar
-  button.navbar-toggler aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button"
+  a.navbar-brand href="#"  Sales Manager System
+  button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
-  #navbarNavAltMarkup.collapse.navbar-collapse
-    .navbar-nav
-      a.nav-item.nav-link href="#"
-        | Home
-        span.sr-only (current)
-      a = link_to 'Sales Reports', sales_reports_path, class: 'nav-item nav-link'
+  #navbarSupportedContent.collapse.navbar-collapse
+    - if current_user
+      ul.navbar-nav.mr-auto
+        li
+          a = link_to 'Sales Reports', sales_reports_path, class: 'nav-item nav-link'
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          a.nav-link href="#"
+            = "Logged as #{@current_user.name}"
+        li.nav-item
+          a
+            = link_to 'Logout', logout_path, class: 'nav-item nav-link'
