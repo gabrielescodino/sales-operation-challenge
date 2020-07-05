@@ -18,7 +18,7 @@ RSpec.describe 'sales_report index', type: :request do
 
     before { 5.times { create(:sales_report, user: user, input_file: @input_file) } }
 
-    it '' do
+    it 'returns a successful response with correct data' do
       subject
 
       expect(response).to have_http_status(200)
