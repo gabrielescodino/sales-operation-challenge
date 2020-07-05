@@ -3,9 +3,9 @@
   .card-body
     .form
       = simple_form_for(SalesReport.new) do |f|
-        = f.input :input_file, as: :file, label: false, class: 'form-control-file js-input-file'
+        = f.input :input_file, as: :file, label: false, class: 'form-control-file'
 
-        = f.submit 'import'
+        = f.submit 'import', class: 'btn btn-primary'
 
     .table-responsive
       table.table.table-hover.table-striped
