@@ -12,11 +12,11 @@ RSpec.describe 'sales_report index', type: :request do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     end
 
-    let(:input_file) { fixture_file_upload(Rails.root.join('spec/fixtures/files/example_input.tab'), 'image/txt') }
+    let(:input_file) { fixture_file_upload(Rails.root.join('spec/fixtures/files/sales_report_sample.tab'), 'image/txt') }
 
     subject { get sales_reports_path }
 
-    before { 5.times { create(:sales_report, user: user, input_file: @input_file) } }
+    before { 5.times { create(:sales_report, user: user, input_file: input_file) } }
 
     it 'returns a successful response with correct data' do
       subject

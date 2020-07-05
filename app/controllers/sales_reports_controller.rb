@@ -2,7 +2,7 @@ class SalesReportsController < ApplicationController
   before_action :authenticate!
 
   def create
-    sales_report = SalesReport.create!(user_id: @current_user.id, input_file: sales_report_params[:input_file])
+    sales_report = SalesReport.create!(user_id: current_user.id, input_file: sales_report_params[:input_file])
     sales_report.enqueue_process!
 
     redirect_back(fallback_location: sales_reports_path,
