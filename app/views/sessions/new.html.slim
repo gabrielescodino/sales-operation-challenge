@@ -1,11 +1,8 @@
-.col-md-6.col-md-offset-3
-  .panel.panel-default style="margin-top: 50px;"
-    .panel-heading
-      h3.text-center Welcome to Sales Manager
-
-    .panel-body
-      .row
-        = form_tag "/auth/google_oauth2", method: :POST, class: 'signup-form form-inline' do |f|
-          .text-center
-            .form-group
-              = submit_tag "Sign in with Google &rarr;".html_safe, class: 'btn btn-primary btn-group'
+.card
+  .card-header
+    h3.text-center Welcome to Sales Manager
+  .card-body
+    = form_tag "/auth/google_oauth2", method: :POST, class: 'signup-form form-inline' do |f|
+      .text-center
+        .form-group
+          = submit_tag "Sign in with Google &rarr;".html_safe, class: 'btn btn-primary btn-group'
