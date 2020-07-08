@@ -4,3 +4,5 @@ en:
       index:
         card_footer_message: ! '%{sales_report_count} sales reports imported by %{user}.'
         show_link: View
+      show:
+        card_footer_message: ! '%{sales_count} sales imported on Sales Report #%{sales_report_id}.'

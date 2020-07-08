@@ -28,7 +28,9 @@
               td = sales_report_decorator.status
               td = sales_report_decorator.income
               td = sales_report_decorator.input_file
-              td = link_to t('views.sales_reports.index.show_link'), sales_report_path(sales_report)
+              td
+                - if sales_report.finished?
+                  = link_to t('views.sales_reports.index.show_link'), sales_report_path(sales_report)
 
       .text-center
 

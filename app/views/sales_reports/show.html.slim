@@ -5,3 +5,5 @@
 .card
   .card-body
     = render partial: 'sales/sales_table', locals: { sales: @sales }
+  .card-footer
+    b = t('views.sales_reports.show.card_footer_message', sales_count: @sales_count, sales_report_id: @sales_report.id)

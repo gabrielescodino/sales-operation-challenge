@@ -11,3 +11,10 @@ en:
         status: Status
         created_at: Imported at
         input_file: File
+      sale:
+        customer_name: Customer Name
+        item_description: Item Description
+        item_price: Item price
+        purchase_count: Purchase count
+        merchant_address: Merchant Address
+        merchant_name: Merchant Name
