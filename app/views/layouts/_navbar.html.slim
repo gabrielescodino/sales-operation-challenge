@@ -6,7 +6,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     - if current_user
       ul.navbar-nav.mr-auto
         li
-          a = link_to 'Sales Reports', sales_reports_path, class: 'nav-item nav-link'
+          a = link_to t('activerecord.models.sales_report.other'), sales_reports_path, class: 'nav-item nav-link'
+        li
+          a = link_to t('activerecord.models.sale.other'), sales_path, class: 'nav-item nav-link'
+
       ul.navbar-nav.ml-auto
         li.nav-item
           a.nav-link href="#"

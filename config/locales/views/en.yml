@@ -6,3 +6,7 @@ en:
         show_link: View
       show:
         card_footer_message: ! '%{sales_count} sales imported on Sales Report #%{sales_report_id}.'
+    sales:
+      index:
+        card_footer_message: ! '%{sales_count} sales imported by %{user}.'
+        income: ! 'Income: %{income}'

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     mount Sidekiq::Web => '/sidekiq'
 
+    resources :sales, only: :index
     resources :sales_reports, only: %i[create index show]
 
     match '/auth/:provider/callback' => 'sessions#create',  as: :auth_callback, via: :get

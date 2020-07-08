@@ -4,6 +4,9 @@ en:
       sales_report:
         one: Sales Report
         other: Sales Reports
+      sale:
+        one: Sale
+        other: Sales
     attributes:
       sales_report:
         id: ID

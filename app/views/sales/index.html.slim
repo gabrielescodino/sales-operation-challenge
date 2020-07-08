@@ -1,0 +1,9 @@
+.jumbotron
+  h1.text-center = t('activerecord.models.sale.other')
+  h1.text-center = t('views.sales.index.income', income: number_to_currency(@total_income/100.0))
+
+.card
+  .card-body
+    = render partial: 'sales/sales_table', locals: { sales: @sales }
+  .card-footer
+    b = t('views.sales.index.card_footer_message', sales_count: @sales_count, user: current_user.name)
