@@ -1,0 +1,7 @@
+.jumbotron
+  h1.text-center = "#{t('activerecord.models.sales_report.one')} ##{@sales_report.id}"
+  h3.text-center = "Income: #{@sales_report.income}"
+
+.card
+  .card-body
+    = render partial: 'sales/sales_table', locals: { sales: @sales }

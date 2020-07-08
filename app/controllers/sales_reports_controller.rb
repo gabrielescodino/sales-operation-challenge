@@ -16,11 +16,13 @@ class SalesReportsController < ApplicationController
     @sales_reports_count = @sales_reports.count
   end
 
-  private
-
-  def set_sales_report
-    @sales_report = current_user.sales_reports.find(params[:id])
+  def show
+    @sales_report = current_user.sales_reports.find(params[:id]).decorate
+    @sales = @sales_report.sales
+    @sales_count = @sales_report.sales.count
   end
+
+  private
 
   def sales_report_params
     params.require(:sales_report).permit(:input_file)

@@ -1,0 +1,19 @@
+ .table-responsive
+  table.table.table-hover.table-striped
+    thead
+      tr
+        th Customer Name
+        th Item Description
+        th Item price
+        th Purchase count
+        th Merchant Address
+        th Merchant Name
+    tbody
+      - @sales.each do |sale|
+        tr
+          td = sale.customer_name
+          td = sale.item_description
+          td = number_to_currency(sale.item_price / 100.0)
+          td = sale.purchase_count
+          td = sale.merchant_address
+          td = sale.merchant_name

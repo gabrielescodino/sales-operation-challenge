@@ -1,5 +1,7 @@
+.jumbotron
+  h1.text-center = t('activerecord.models.sales_report.other')
+
 .card
-  .card-header = I18n.t('activerecord.models.sales_report.other')
   .card-body
     .form
       = simple_form_for(SalesReport.new) do |f|
@@ -26,7 +28,10 @@
               td = sales_report_decorator.status
               td = sales_report_decorator.income
               td = sales_report_decorator.input_file
+              td = link_to t('views.sales_reports.index.show_link'), sales_report_path(sales_report)
+
       .text-center
 
     .card-footer
       b = t('views.sales_reports.index.card_footer_message', sales_report_count: @sales_reports_count, user: current_user.name)
+

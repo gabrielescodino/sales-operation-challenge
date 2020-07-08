@@ -3,3 +3,4 @@ en:
     sales_reports:
       index:
         card_footer_message: ! '%{sales_report_count} sales reports imported by %{user}.'
+        show_link: View
