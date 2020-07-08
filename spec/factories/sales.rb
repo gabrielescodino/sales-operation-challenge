@@ -6,5 +6,6 @@ FactoryBot.define do
     customer
     merchant
     item
+    created_at { '07/07/2020'.to_datetime }
   end
 end

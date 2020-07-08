@@ -13,7 +13,7 @@ RSpec.describe SalesReport, type: :model do
 
   describe '#enqueue_process!' do
     subject do
-      input_file = fixture_file_upload(Rails.root.join('spec/fixtures/files/example_input.tab'), 'image/txt')
+      input_file = fixture_file_upload(Rails.root.join('spec/fixtures/files/sales_report_sample.tab'), 'image/txt')
       create(:sales_report, input_file: input_file)
     end
 
