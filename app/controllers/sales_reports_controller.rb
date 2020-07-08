@@ -17,7 +17,7 @@ class SalesReportsController < ApplicationController
   end
 
   def show
-    @sales_report = current_user.sales_reports.find(params[:id]).decorate
+    @sales_report = current_user.sales_reports.finished.find(params[:id]).decorate
     @sales = @sales_report.sales
     @sales_count = @sales_report.sales.count
   end
