@@ -5,7 +5,7 @@
   .card-body
     .form
       = simple_form_for(SalesReport.new) do |f|
-        = f.input :input_file, as: :file, label: false, class: 'form-control-file'
+        = f.input :input_file, as: :file, label: false, class: 'form-control-file js-input-file'
 
         = f.submit 'import', class: 'btn btn-primary'
 
@@ -31,8 +31,7 @@
               td
                 - if sales_report.finished?
                   = link_to t('views.sales_reports.index.show_link'), sales_report_path(sales_report)
-
-      .text-center
+      = paginate @sales_reports
 
     .card-footer
       b = t('views.sales_reports.index.card_footer_message', sales_report_count: @sales_reports_count, user: current_user.name)

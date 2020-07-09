@@ -12,14 +12,14 @@ class SalesReportsController < ApplicationController
   end
 
   def index
-    @sales_reports = current_user.sales_reports.order(created_at: 'desc')
-    @sales_reports_count = @sales_reports.count
+    @sales_reports = current_user.sales_reports.order(created_at: 'desc').page params[:page]
+    @sales_reports_count = current_user.sales_reports.count
   end
 
   def show
     @sales_report = current_user.sales_reports.finished.find(params[:id]).decorate
-    @sales = @sales_report.sales
-    @sales_count = @sales_report.sales.count
+    @sales = @sales_report.sales.page params[:page]
+    @sales_count = current_user.sales.count
   end
 
   private

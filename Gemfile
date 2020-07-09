@@ -35,6 +35,7 @@ gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'sidekiq', '~> 6.1'
 gem 'slim-rails', '~> 3.2'
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
