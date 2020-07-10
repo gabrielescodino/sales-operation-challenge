@@ -7,32 +7,28 @@
 
 ### Setup
 
-1.
-Clone the project repository and access it:
+### Instalação e execução da aplicação
+
+1.  Clone the project repository and access it:
 
     $ git clone https://github.com/gabrielescodino/sales-operation-challenge && cd sales-operation-challenge
 
-2.
-Inside project directory run bundle install in order to fetch all remote sources, resolve dependencies and install all needed gems:
+2.  Inside project directory run bundle install in order to fetch all remote sources, resolve dependencies and install all needed gems:
 
     $ bundle install
-3.
-Copy the content of the environment variables sample file and change it with your Google Credentials app info:
+3.  Copy the content of the environment variables sample file and change it with your Google Credentials app info:
 
     cp .env.example .env
-4.
-Set a database.yml file with your credentials. There is a sample file on project. Copy it with:
+4.  Set a database.yml file with your credentials. There is a sample file on project. Copy it with:
 
     cp config/database.yml.sample config/database.yml
 
-5.
-Setup database:
+5.  Setup database:
 
     $ bin/rails db:setup
 Inicie a aplicação usando o foreman
 
-6.
-Start the Rails app with foreman:
+6.  Start the Rails app with foreman:
 
     $ foreman start
 
@@ -46,3 +42,7 @@ Start the Rails app with foreman:
 ### Future Jobs
 * Use Action Cable to real time update sales report status as they are processed on background jobs.
 * Improve front-end, especially on sales reports file upload input form.
+
+### About
+
+This repository was created to solve the problem described [here](https://github.com/myfreecomm/desafio-programacao-1b)
