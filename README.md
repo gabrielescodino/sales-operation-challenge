@@ -7,8 +7,6 @@
 
 ### Setup
 
-### Instalação e execução da aplicação
-
 1.  Clone the project repository and access it:
 
     $ git clone https://github.com/gabrielescodino/sales-operation-challenge && cd sales-operation-challenge
@@ -26,7 +24,6 @@
 5.  Setup database:
 
     $ bin/rails db:setup
-Inicie a aplicação usando o foreman
 
 6.  Start the Rails app with foreman:
 
@@ -45,4 +42,4 @@ Inicie a aplicação usando o foreman
 
 ### About
 
-This repository was created to solve the problem described [here](https://github.com/myfreecomm/desafio-programacao-1b)
+This repository was created to solve the problem described [here](https://github.com/myfreecomm/desafio-programacao-1b).
