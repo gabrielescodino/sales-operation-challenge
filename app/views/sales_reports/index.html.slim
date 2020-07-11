@@ -13,24 +13,25 @@
       table.table.table-hover.table-striped
         thead
           tr
-            th = t('activerecord.attributes.sales_report.id')
-            th = t('activerecord.attributes.sales_report.created_at')
-            th = t('activerecord.attributes.sales_report.status')
-            th = t('activerecord.attributes.sales_report.income')
-            th = t('activerecord.attributes.sales_report.input_file')
+            th = SalesReport.human_attribute_name(:id)
+            th = SalesReport.human_attribute_name(:created_at)
+            th = SalesReport.human_attribute_name(:status)
+            th = SalesReport.human_attribute_name(:income)
+            th = SalesReport.human_attribute_name(:input_file)
             th
+
         tbody
           - @sales_reports.each do |sales_report|
-            - sales_report_decorator = sales_report.decorate
             tr
-              td = sales_report_decorator.id
-              td = sales_report_decorator.created_at
-              td = sales_report_decorator.status
-              td = sales_report_decorator.income
-              td = sales_report_decorator.input_file
+              td = sales_report.id
+              td = sales_report.created_at
+              td = sales_report.status
+              td = sales_report.income
+              td = sales_report.input_file
               td
                 - if sales_report.finished?
                   = link_to t('views.sales_reports.index.show_link'), sales_report_path(sales_report)
+
       = paginate @sales_reports
 
     .card-footer

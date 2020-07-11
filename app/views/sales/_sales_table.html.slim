@@ -2,15 +2,14 @@
   table.table.table-hover.table-striped
     thead
       tr
-        th = t('activerecord.attributes.sale.customer_name')
-        th = t('activerecord.attributes.sale.item_description')
-        th = t('activerecord.attributes.sale.item_price')
-        th = t('activerecord.attributes.sale.purchase_count')
-        th = t('activerecord.attributes.sale.merchant_address')
-        th = t('activerecord.attributes.sale.merchant_name')
+        th = Sale.human_attribute_name(:customer_name)
+        th = Sale.human_attribute_name(:item_description)
+        th = Sale.human_attribute_name(:item_price)
+        th = Sale.human_attribute_name(:purchase_count)
+        th = Sale.human_attribute_name(:merchant_address)
+        th = Sale.human_attribute_name(:merchant_name)
     tbody
       - sales.each do |sale|
-        - sale = sale.decorate
         tr
           td = sale.customer_name
           td = sale.item_description

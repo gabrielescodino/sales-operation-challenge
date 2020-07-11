@@ -12,7 +12,7 @@ class SalesReportsController < ApplicationController
   end
 
   def index
-    @sales_reports = current_user.sales_reports.order(created_at: 'desc').page params[:page]
+    @sales_reports = current_user.sales_reports.order(created_at: 'desc').page(params[:page]).decorate
     @sales_reports_count = current_user.sales_reports.count
   end
 

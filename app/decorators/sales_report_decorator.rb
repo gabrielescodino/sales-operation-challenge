@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-class SalesReportDecorator < Draper::Decorator
-  include Rails.application.routes.url_helpers
-
+class SalesReportDecorator < ApplicationDecorator
   delegate_all
 
   def created_at

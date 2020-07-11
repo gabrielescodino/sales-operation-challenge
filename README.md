@@ -16,7 +16,7 @@
     $ bundle install
 3.  Copy the content of the environment variables sample file and change it with your Google Credentials app info:
 
-    cp .env.example .env
+    $ cp .env.example .env
 4.  Set a database.yml file with your credentials. There is a sample file on project. Copy it with:
 
     cp config/database.yml.sample config/database.yml
