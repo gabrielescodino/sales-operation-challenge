@@ -660,13 +660,24 @@
           1,
           null,
           1,
-          null,
-          1,
           1,
           null,
           null,
           1,
-          11,
+          6,
+          null,
+          null
+        ]
+      },
+      "/home/gabriel/projetos/sales-operation-challenge/app/decorators/application_decorator.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
           null,
           null
         ]
@@ -740,9 +751,6 @@
       "/home/gabriel/projetos/sales-operation-challenge/app/decorators/sales_report_decorator.rb": {
         "lines": [
           null,
-          null,
-          1,
-          1,
           null,
           1,
           1,
@@ -1225,8 +1233,8 @@
           1,
           1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null
@@ -1456,6 +1464,15 @@
           null
         ]
       },
+      "/home/gabriel/projetos/sales-operation-challenge/app/decorators/paginate_decorator.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/gabriel/projetos/sales-operation-challenge/app/controllers/sales_reports_controller.rb": {
         "lines": [
           null,
@@ -1471,7 +1488,6 @@
           null,
           null,
           null,
-          1,
           1,
           1,
           1,
@@ -1492,6 +1508,6 @@
         ]
       }
     },
-    "timestamp": 1594509571
+    "timestamp": 1594510649
   }
 }

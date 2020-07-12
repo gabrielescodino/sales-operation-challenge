@@ -23,14 +23,19 @@
         tbody
           - @sales_reports.each do |sales_report|
             tr
-              td = sales_report.id
-              td = sales_report.created_at
-              td = sales_report.status
-              td = sales_report.income
-              td = sales_report.input_file
-              td
+              td.align-middle = sales_report.id
+              td.align-middle = sales_report.created_at
+              td.align-middle = sales_report.status
+              td.align-middle = sales_report.income
+              td.align-middle = sales_report.input_file.name
+              td.align-middle
                 - if sales_report.finished?
-                  = link_to t('views.sales_reports.index.show_link'), sales_report_path(sales_report)
+                  .btn-group.btn-group-sm role="group" aria-label="Basic example"
+                    = link_to sales_report_path(sales_report), class: 'btn btn-secondary' do
+                      i.far.fa-eye
+
+                    = link_to rails_blob_path(sales_report.input_file, disposition: 'download'), class: 'btn btn-secondary' do
+                      i.fas.fa-file-download
 
       = paginate @sales_reports
 
